@@ -1,0 +1,28 @@
+m = int(input("Enter number of rows: "))
+n = int(input("Enter number of columns: "))
+
+matrix = []
+
+print("Enter matrix elements:")
+
+for i in range(m):
+    row = []
+    for j in range(n):
+        element = int(input(f"Enter element[{i}][{j}]: "))
+        row.append(element)
+    matrix.append(row)
+
+zero = 0
+non_zero = 0
+
+for i in range(m):
+    for j in range(n):
+        if matrix[i][j] == 0:
+            zero += 1
+        else:
+            non_zero += 1
+
+if zero > non_zero:
+    print("Matrix is sparse")
+else:
+    print("Matrix is not sparse")
